@@ -1,0 +1,64 @@
+#Header{
+
+	width: 100%;
+	flex-direction: column;
+	position: relative;
+	z-index: 999;
+}
+.headertp{
+	position: relative;
+	z-index: 9;
+	background-color: #fff;
+	padding-top: 0.16rem;
+	    height: 0.66267rem;
+	width: 100%;
+	padding-right: 0.13rem;
+	display: flex;
+	justify-content: space-between;
+}
+.headertp a{
+	display: block;
+}
+.headtr a{
+	margin-left: 0.4rem;
+}
+.logo {
+	width:  1.054533rem;
+	margin-left: 0.34rem;
+}
+.logo  img{
+	width: 100%;
+}
+.headtr{
+	display: flex;
+	align-items:center;
+}
+
+.search .icon-sousuo{
+	font-size: 0.35rem;	
+}
+.kongjian{
+	    width: 0.409rem;
+    height: 0.409rem;
+    border-radius: 50%;
+    background-image: url('../img/noface.gif');
+    background-size: cover;
+}
+.kongjian img{
+	width: 100%;
+	height: 100%;
+}
+.kehuduan{
+	width: 1.36333rem;
+    height: 0.42rem;
+    border-radius: .10067rem;
+    background-color: #fb7299;
+}
+.kehuduan p{
+	font-size: .245467rem;
+	text-align: center;
+	line-height: .245467rem;
+	height: 0.42rem;
+	line-height: 0.42rem;
+	    color: #fff;
+}

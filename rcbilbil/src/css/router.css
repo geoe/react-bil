@@ -1,0 +1,78 @@
+.nav{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	padding-top: .246rem;
+	background-color:#fff;
+}
+.navul{
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0.21rem;
+	justify-content: space-between;
+	overflow: hidden;
+	width: 100%;
+	transition-duration: 1s
+}
+.navcent{
+	display: flex;
+	width: 100%;
+}
+.navul li{
+	width: 16%;
+	text-align: center;
+	padding-right: .2rem;
+}
+
+
+.navul a{
+	display: inline-block;
+}
+.navul  a p{
+    font-size: .23733rem;
+    line-height: 0.48rem;
+    text-align: center;
+    border-bottom: .03533rem;
+   	    color: #757575;
+}
+.activeclass {
+	font-size: .23733rem;
+    line-height: 0.48rem;
+    text-align: center;
+    border-bottom: .03533rem;
+    border-bottom: .03533rem solid #fb7299;
+}
+.navul  .activeclass p{
+	 color: #fb7299;
+}
+.xiala .iconfont{
+	font-size: 40px;
+    line-height: 0.48rem;
+    padding-right: .2rem;
+    text-align: center;
+}
+.navul2{
+	position: absolute;
+	top: -5rem;
+	z-index: 4;
+	background:#fff;
+	color: #fff;
+}
+.navli2{
+	top: .3rem;
+	padding-right: .1rem;
+	transition-duration: .6s
+}
+.navul2 li{
+	padding:.13rem
+}
+.navul2 li:last-of-type{
+	padding-top: .05rem;
+}
+.navul2 .xiala2{
+	width: 100%;
+	font-size: .3rem;
+	text-align: center;
+	color: #aaa;
+}
