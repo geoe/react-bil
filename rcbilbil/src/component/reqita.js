@@ -5,7 +5,13 @@ import '../css/font/remen/iconfont.css'
 import '../css/font/you/iconfont.css'
 import '../css/font/paihang/iconfont.css'
 import '../css/font/liuanbo/iconfont.css'
-
+import {
+  BrowserRouter as Routes,
+  Route,
+  Link,
+  NavLink,
+  Redirect
+} from 'react-router-dom'
 import axios from 'axios'
 class Qita extends Component{
 	constructor(){
@@ -40,7 +46,6 @@ class Qita extends Component{
 		})
 		axios.get('/json/music.json')
 		.then(function(res) {
-			console.log(res);
 			that.setState({
 				music:res.data.data.archives.slice(1)
 			})
@@ -51,15 +56,18 @@ class Qita extends Component{
 		return (
 		<div className='qita'>	
 			<div className='remen'>
+				<NavLink to="/channel/1" className='biaoti'>	
 	 			<div className='titleremen'>
 	 				<h2 className='relogo'><i className="iconfont icon-remen"></i><span>动画</span></h2>
 	 				<div className='relogo'><i className="iconfont icon-billboard"></i><span>查看更多</span><i className="iconfont icon-you"></i></div>
 	 			</div>
+	 			</NavLink>
 	 			<div className='remencont'>
 	 				{
 	 					this.state.donghua.map((item,index)=>{
 	 						return(
-	 							<div className='remcontdiv' key={item.aid}>
+	 						<NavLink to={"/show/"+item.aid} key={item.aid} className='nava'>		
+	 							<div className='remcontdiv'>
 	 							<div className='remimg'>
 	 								<img src={item.pic}/>
 	 								<div className='bof'>
@@ -75,21 +83,25 @@ class Qita extends Component{
 	 							</div>
 	 							<div className='title'>{item.title}</div>	
 	 							</div>
+	 						</NavLink>	
 	 						)
 	 					})
 					}
 				</div>	
 			</div>	
 			<div className='remen'>
+			<NavLink to="/channel/13" className='biaoti'>	
 	 			<div className='titleremen'>
 	 				<h2 className='relogo'><i className="iconfont icon-remen"></i><span>番剧</span></h2>
 	 				<div className='relogo'><i className="iconfont icon-billboard"></i><span>查看更多</span><i className="iconfont icon-you"></i></div>
 	 			</div>
+	 		</NavLink>	
 	 			<div className='remencont'>
 	 				{
 	 					this.state.fanju.map((item,index)=>{
 	 						return(
-	 							<div className='remcontdiv' key={item.aid}>
+	 						<NavLink to={"/show/"+item.aid} key={item.aid} className='nava'>		
+	 							<div className='remcontdiv'>
 	 							<div className='remimg'>
 	 								<img src={item.pic}/>
 	 								<div className='bof'>
@@ -105,21 +117,25 @@ class Qita extends Component{
 	 							</div>
 	 							<div className='title'>{item.title}</div>	
 	 							</div>
+	 						</NavLink>	
 	 						)
 	 					})
 					}
 				</div>	
 			</div>
 			<div className='remen'>
+			<NavLink to="/channel/167" className='biaoti'>	
 	 			<div className='titleremen'>
 	 				<h2 className='relogo'><i className="iconfont icon-remen"></i><span>国创</span></h2>
 	 				<div className='relogo'><i className="iconfont icon-billboard"></i><span>查看更多</span><i className="iconfont icon-you"></i></div>
 	 			</div>
+	 		</NavLink>		
 	 			<div className='remencont'>
 	 				{
 	 					this.state.guochuang.map((item,index)=>{
 	 						return(
-	 							<div className='remcontdiv' key={item.aid}>
+	 						<NavLink to={"/show/"+item.aid} key={item.aid} className='nava'>		
+	 							<div className='remcontdiv'>
 	 							<div className='remimg'>
 	 								<img src={item.pic}/>
 	 								<div className='bof'>
@@ -135,21 +151,25 @@ class Qita extends Component{
 	 							</div>
 	 							<div className='title'>{item.title}</div>	
 	 							</div>
+	 						</NavLink>	
 	 						)
 	 					})
 					}
 				</div>	
 			</div>
 			<div className='remen'>
+			<NavLink to="/channel/3" className='biaoti'>	
 	 			<div className='titleremen'>
 	 				<h2 className='relogo'><i className="iconfont icon-remen"></i><span>音乐</span></h2>
 	 				<div className='relogo'><i className="iconfont icon-billboard"></i><span>查看更多</span><i className="iconfont icon-you"></i></div>
 	 			</div>
+	 		</NavLink>	
 	 			<div className='remencont'>
 	 				{
 	 					this.state.music.map((item,index)=>{
 	 						return(
-	 							<div className='remcontdiv' key={item.aid}>
+	 						<NavLink to={"/show/"+item.aid} key={item.aid} className='nava'>		
+	 							<div className='remcontdiv'>
 	 							<div className='remimg'>
 	 								<img src={item.pic}/>
 	 								<div className='bof'>
@@ -165,6 +185,7 @@ class Qita extends Component{
 	 							</div>
 	 							<div className='title'>{item.title}</div>	
 	 							</div>
+	 						</NavLink>	
 	 						)
 	 					})
 					}

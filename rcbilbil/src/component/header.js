@@ -2,10 +2,17 @@ import React, {Component} from 'react'
 import '../css/head.css';
 import '../css/font/iconfont.css'
 import Router from '../router'
-
+import {
+  BrowserRouter as Routes,
+  Route,
+  Link,
+  NavLink,
+  Redirect
+} from 'react-router-dom'
 class Head extends Component{
 	render(){
 		return (
+		<div>	
 			<div id='Header'>
 				<div className='headertp'>
 					<div className='logos'>
@@ -14,9 +21,9 @@ class Head extends Component{
 						</a>
 					</div>
 					<div className='headtr'>
-						<a className='search'  href=''>
+						<NavLink className='search' to='/search/14'>
 							<i className="iconfont icon-sousuo"></i>
-						</a>
+						</NavLink>
 						<a className='kongjian' href=''>
 						</a>
 						<a className='kehuduan' href=''>
@@ -24,7 +31,7 @@ class Head extends Component{
 						</a>
 					</div>
 				</div>
-				<Router/>
+				</div>	
 			</div>	
 			)
 	}

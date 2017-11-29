@@ -3,6 +3,7 @@ import './css/router.css'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 import './css/font/xiala/iconfont.css'
 import './css/font/up/iconfont.css'
+import Searchs from './component/search'
 import Homeone from './component/homeone'
 import {
   BrowserRouter as Router,
@@ -13,6 +14,9 @@ import {
 } from 'react-router-dom'
 
 class Home extends Component{
+	  componentWillReceiveProps(nextProps) {
+     console.log(nextProps.location.pathname)
+     } 
 	render(){
 		return(
 			<div>
@@ -33,23 +37,24 @@ const Anni = ({ match })=> (
 </div>
 )
 
-const fanju = ({ match }) => (
+
+const show = ({ match }) => (
 <div>
-<h3>{match.params.topicId}</h3>
+<h3>{match.params.sid}</h3>
 </div>
 )
 
-const guochuang = ({ match }) => (
-<div>
-<h3>{match.params.topicId}</h3>
-</div>
-)
+class Search extends Component{
+	render(){
+		return(
+			<div>
+				<Searchs/>
+			</div>
+			)
+	}
 
-const music = ({ match }) => (
-<div>
-<h3>{match.params.topicId}</h3>
-</div>
-)
+}
+
 
 
 
@@ -65,13 +70,14 @@ class router extends Component {constructor() {
 	upla(){
 		this.refs.islist.className ='navul navul2'
 	}
+
 	render(){
 		return(
 		<Router>
 		<div className='nav'>
 		<div className='navcent'>
 		<ul className='navul'>
-<li><NavLink to="/"  activeClassName='activeclass'><p>首页</p></NavLink></li>
+<li><NavLink to="/home"  activeClassName='activeclass'><p>首页</p></NavLink></li>
 <li><NavLink to="/channel/1" activeClassName='activeclass'><p>动画</p></NavLink></li>	
 <li><NavLink to="/channel/13" activeClassName='activeclass'><p>番剧</p></NavLink></li>
 <li><NavLink to="/channel/167" activeClassName='activeclass'><p>国创</p></NavLink></li>
@@ -102,9 +108,10 @@ class router extends Component {constructor() {
 </ul>
 
 		<hr/>
-		<Redirect exact from ='/' to='/home'/>
-		<Route exact path="/home" component={Home}/>
+		<Route  path="/home" exact component={Home}/>
 		<Route path="/channel/:xid" component={Anni}/>
+		<Route path="/show/:sid" component={show}/>
+		<Route path="/search" component={Search}/>
 		</div>
 		</Router>
 

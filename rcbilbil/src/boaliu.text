@@ -1,5 +1,64 @@
-class router extends Component{
-	constructor() {
+import React ,{Component}from 'react'
+import './css/router.css'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
+import './css/font/xiala/iconfont.css'
+import './css/font/up/iconfont.css'
+import Searchs from './component/search'
+import Homeone from './component/homeone'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  NavLink,
+  Redirect
+} from 'react-router-dom'
+
+class Home extends Component{
+	  componentWillReceiveProps(nextProps) {
+     console.log(nextProps.location.pathname)
+     } 
+	render(){
+		return(
+			<div>
+				<Homeone/>
+			</div>
+			)
+	}
+
+}
+
+const Anni = ({ match })=> (
+<div>
+<h2>
+	<div>
+		{match.params.xid}
+	</div>
+</h2>
+</div>
+)
+
+
+const show = ({ match }) => (
+<div>
+<h3>{match.params.sid}</h3>
+</div>
+)
+
+class Search extends Component{
+	render(){
+		return(
+			<div>
+				<Searchs/>
+			</div>
+			)
+	}
+
+}
+
+
+
+
+class router extends Component {constructor() {
 		 super();
 		 this.listst = this.listst.bind(this);
 		 this.upla = this.upla.bind(this);
@@ -11,12 +70,13 @@ class router extends Component{
 	upla(){
 		this.refs.islist.className ='navul navul2'
 	}
+
 	render(){
 		return(
-			<Router>
-<div className='nav'>
-<div className='navcent'>
-<ul className='navul'>
+		<Router>
+		<div className='nav'>
+		<div className='navcent'>
+		<ul className='navul'>
 <li><NavLink to="/home"  activeClassName='activeclass'><p>首页</p></NavLink></li>
 <li><NavLink to="/channel/1" activeClassName='activeclass'><p>动画</p></NavLink></li>	
 <li><NavLink to="/channel/13" activeClassName='activeclass'><p>番剧</p></NavLink></li>
@@ -24,12 +84,10 @@ class router extends Component{
 <li><NavLink to="/channel/3" activeClassName='activeclass'><p>音乐</p></NavLink></li>
 <li className='xiala'><i className="iconfont icon-xiala" onClick={this.listst}></i></li>
 </ul>
-
-</div>
-
-<ul className='navul navul2' ref='islist'>
+	 </div>
+	 <ul className='navul navul2' ref='islist'>
 <li><NavLink to="/home"  activeClassName='activeclass'><p>首页</p></NavLink></li>
-<li><NavLink to="/anni/1" activeClassName='activeclass'><p>动画</p></NavLink></li>	
+<li><NavLink to="/channel/1" activeClassName='activeclass'><p>动画</p></NavLink></li>	
 <li><NavLink to="/channel/13" activeClassName='activeclass'><p>番剧</p></NavLink></li>
 <li><NavLink to="/channel/167" activeClassName='activeclass'><p>国创</p></NavLink></li>
 <li><NavLink to="/channel/3" activeClassName='activeclass'><p>音乐</p></NavLink></li>
@@ -49,16 +107,15 @@ class router extends Component{
 <li className='xiala xiala2' onClick={this.upla}><i className="iconfont icon-shang"></i></li>
 </ul>
 
-<hr/>
-<Redirect exact from ='/' to='/home'>
-<Route  path="/" component={Home}/>
-<Route  path="/anni/listid" component={anni}/>
-<Route  path="/channel/listid" component={fanju}/>
-<Route  path="/channel/listid" component={guochuang}/>
-<Route  path="/channel/listid" component={music}/>
-</div>
-</Router>
-			)
+		<hr/>
+		<Route  path="/home" exact component={Home}/>
+		<Route path="/channel/:xid" component={Anni}/>
+		<Route path="/show/:sid" component={show}/>
+		<Route path="/search" component={Search}/>
+		</div>
+		</Router>
+
+		)
 	}
 
 }

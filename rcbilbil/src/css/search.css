@@ -1,0 +1,100 @@
+#Search{
+	display: flex;
+	width: 100%;
+	margin-top: .2rem;
+	padding-left: .21rem;
+	padding-right: .21rem;
+	height: .82rem;
+	justify-content: space-between;
+}
+.searchk{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	top: -1.5rem;
+	background-color: #fff;
+	z-index: 1000;
+}
+.iptk{
+	display: flex;
+	width: 85%;
+	padding: .08rem 0;
+	background: #f4f4f4;
+	border-radius: .1rem;
+}
+.iptk input{
+	width: 100%;
+	position: relative;
+	background: #f4f4f4;
+	font-size: .31rem;
+   outline:none;  
+   border:0px;  
+}
+.iptk  	.icon-sousuo{
+	font-size: .5rem;
+	line-height: .5rem;
+	padding: .04rem .15rem;
+}
+#Search  a{
+	text-align: right;
+    color: #fb7299;
+    font-size: .3rem;
+    line-height: .82rem;
+}
+.zhentui{
+	display: flex;
+	flex-direction: column;
+}
+.zhentui .allh{
+	width: 100%;
+	font-size: .25rem;
+	color: #999;
+	padding: .26267rem 0;
+	padding-left: .21rem;
+}
+.allsear{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: right;
+	padding: 0 .21rem;
+}
+.allsear div{
+	margin: .1rem .15rem;
+	padding: .15rem;
+	border: .02267rem solid #ccc;
+	border-radius: 0.41rem;
+	font-size: .28rem;
+	color: #505050;
+}
+.jieguo {
+	margin-top: .5rem;
+	border:3px solid #f4f4f4;
+	border-top: 3px solid hotpink;
+	border-bottom: 0px;
+}
+.jieguo ul{
+	display: flex;
+	flex-direction: column;
+	border: 5px;
+	padding: 0rem .2rem;
+	width: 100%;
+}
+.jieguo ul a{
+	width: 100%;
+	padding: .2rem 0rem;
+	display: flex;
+	flex-direction: column;
+}
+.jieguo ul .youa img{
+	height: 2.4rem;
+	padding-bottom: .16rem;
+}
+.jieguo ul .youa h2{
+	text-align: center;
+}
+.meiy{
+	text-align: center;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: 0.3rem;
+}

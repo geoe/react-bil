@@ -4,6 +4,13 @@ import '../css/font/remen/iconfont.css'
 import '../css/font/you/iconfont.css'
 import '../css/font/paihang/iconfont.css'
 import '../css/font/liuanbo/iconfont.css'
+import {
+  BrowserRouter as Routes,
+  Route,
+  Link,
+  NavLink,
+  Redirect
+} from 'react-router-dom'
 import axios from 'axios'
 class Remen extends Component{
 	constructor(){
@@ -25,15 +32,18 @@ class Remen extends Component{
 	render(){
 		return (
 			<div className='remen'>
+			<NavLink to="/channel/118" className='biaoti'>	
 	 			<div className='titleremen'>
 	 				<h2 className='relogo'><i className="iconfont icon-remen"></i><span>热门推荐</span></h2>
 	 				<div className='relogo'><i className="iconfont icon-billboard"></i><span>排行榜</span><i className="iconfont icon-you"></i></div>
 	 			</div>
+	 		</NavLink>	
 	 			<div className='remencont'>
 	 				{
 	 					this.state.remen.map((item,index)=>{
 	 						return(
-	 							<div className='remcontdiv' key={item.aid}>
+	 						<NavLink to={"/show/"+item.aid} key={item.aid} className='nava'>	
+	 							<div className='remcontdiv' >
 	 							<div className='remimg'>
 	 								<img src={item.pic}/>
 	 								<div className='bof'>
@@ -49,6 +59,7 @@ class Remen extends Component{
 	 							</div>
 	 							<div className='title'>{item.title}</div>	
 	 							</div>
+	 						</NavLink>	
 	 						)
 	 					})
 					}

@@ -7,6 +7,13 @@ import Qita from './reqita'
 import Footer from './footer'
 import axios from 'axios'
 import { BackTop } from 'antd';
+import {
+  BrowserRouter as Routes,
+  Route,
+  Link,
+  NavLink,
+  Redirect
+} from 'react-router-dom'
 class Homeone extends Component{
 	constructor(){
 		super();
@@ -14,6 +21,7 @@ class Homeone extends Component{
 			lunbolist:[]
 		}
 	}
+
 	componentDidMount(){
 		var that = this;
 		axios.get('/json/lunbo.json')
@@ -31,7 +39,9 @@ class Homeone extends Component{
 				{
 					this.state.lunbolist.map((item,index)=>{
 						return(
-							<div key={item.id}><img src={item.pic}/></div>
+						<NavLink to={"/show/"+item.id} key={item.id}>
+							<div ><img src={item.pic}/></div>
+						</NavLink>	
 						)
 					})
  				}

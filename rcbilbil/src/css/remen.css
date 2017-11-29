@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	padding-top: .08533rem;
-	height: 5.8rem;
+	height: 6.8rem;
 	background-color: #f4f4f4
 }
 .titleremen{
@@ -13,7 +13,13 @@
 	   padding-left: 0.21rem;
 	   padding-right: 0.21rem;
 	   display: flex;
-	   justify-content: space-between;
+	   	   justify-content: space-between;
+}
+.biaoti{
+	width: 100%;
+	    position: relative;
+	   display: flex;
+
 }
 .remen .iconfont{
 	font-size: 0.3822rem;
@@ -33,7 +39,7 @@
 }
 .remencont{
 	flex: 1;
-	padding-top: 0.2rem;
+	padding-top: 0.15rem;
 	padding-left: 0.21rem;
 	width: 100%;
 	padding-right: 0.21rem;
@@ -41,13 +47,14 @@
 	position: relative;
 	flex-wrap: wrap;
 }
-.remcontdiv{
+.nava{
 	display: flex;
 	flex-direction: column;
 	width: 50%;
 	padding-bottom: 0.26rem;
 	position: relative;
 }
+
 .bof{
 	display: flex;
 	position: relative;
@@ -59,8 +66,8 @@
 	padding-right: .15rem;
 }
 .remimg{
-	width: 2.78rem;
-	height: 1.8rem;
+	width: 3.28rem;
+	height: 2.3rem;
 	border-radius: .15rem;
 	overflow: hidden;
 }
@@ -79,7 +86,7 @@
 }
 .title{
 	padding-top: .1rem;
-	font-size: .16467rem;
+	font-size: .236467rem;
 	height: .42rem;
 	overflow: hidden;
     color: #212121;
