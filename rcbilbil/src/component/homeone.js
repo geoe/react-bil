@@ -5,8 +5,10 @@ import '../css/antd.css'
 import Remen from './remen'
 import Qita from './reqita'
 import Footer from './footer'
+import Lishi from './lishi'
 import axios from 'axios'
 import { BackTop } from 'antd';
+
 import {
   BrowserRouter as Routes,
   Route,
@@ -31,7 +33,6 @@ class Homeone extends Component{
 			})
 		})
 	}
-	
 	render(){
 		return (
 			<div id='homeone'>
@@ -48,6 +49,7 @@ class Homeone extends Component{
  				</Carousel>
  				<Remen/>
  				<Qita/>
+ 				 <Lishi listsh={this.props.lists}/>
  				<Footer/>
  				<div id='totop'>
     				<BackTop>

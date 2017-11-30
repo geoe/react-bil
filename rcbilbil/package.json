@@ -7,7 +7,9 @@
     "react": "^16.1.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,10 +20,12 @@
   "proxy": {
     "/x": {
       "target": "https://api.bilibili.com",
-       "hostname":"api.bilibili.com",
+      "hostname": "api.bilibili.com",
       "changeOrigin": true,
-      "pathRewrite": {"^/x": "/x"},
-       "ws": true
+      "pathRewrite": {
+        "^/x": "/x"
+      },
+      "ws": true
     },
     "/v4": {
       "target": "http://m.maizuo.com",
@@ -32,9 +36,13 @@
       "ws": true
     }
   },
-   
-   "plugins": [
-    ["import", { "libraryName": "antd", "style": "css" }] 
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
   ]
-  
 }

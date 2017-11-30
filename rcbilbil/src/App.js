@@ -10,19 +10,82 @@ import './css/font/xiala/iconfont.css'
 import './css/font/up/iconfont.css'
 import './css/router.css'
 import './css/app.css'
+import {connect} from 'react-redux';
 import Homeone from './component/homeone'
 import Header from './component/header'
 import Searchs from './component/search'
-class Home extends Component{
-	render(){
-		return(
-			<div>
-				<Homeone/>
-			</div>
-			)
-	}
 
+class AppUI extends Component {
+	componentWillMount(){
+    	this.props.lishijia(this.props.match.params.sid)
+    }
+  render() {
+  	
+    var props = this.props;
+    return (
+      <div className="Aps">
+        <ul>
+          {props.list.map(function(item, index){
+            return <li key={index}>{item}</li>;
+          })}
+        </ul>
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = (state)=>{
+	return{
+		list:state.list
+	}
+}
+const mapDispatchToProps = (dispatch)=>{
+	return{
+		lishijia:function(data){
+			dispatch({
+				type:"shijijias",
+				payload:data
+			})
+		}
+	}
+}
+const show = connect(mapStateToProps,mapDispatchToProps)(AppUI)
+
+
+
+class AppUIHome extends Component {
+  render() {
+    var props = this.props;
+    return (
+      <div>
+		  <Homeone lists={props}/>
+      </div>
+    )
+  }
+}
+
+const mapStateToPropshome = (state)=>{
+	return{
+		list:state.list
+	}
+}
+const mapDispatchToPropshome = (dispatch)=>{
+	return{
+		
+	}
+}
+const Home = connect(mapStateToPropshome,mapDispatchToPropshome )(AppUIHome)
+
+
+
+
+
+
+
+
+
+
+
 const Anni = ({ match })=> (
 <div>
 <h2>
@@ -38,11 +101,6 @@ const Topic = ({ match }) => (
   </div>
 )
 
-const show = ({ match }) => (
-<div>
-<h3>{match.params.sid}</h3>
-</div>
-)
 
 class Search extends Component{
 	render(){
@@ -68,7 +126,6 @@ class App extends React.Component {constructor() {
 	upla(){
 		this.refs.islist.className ='navul navul2'
 	}
-
 	render(){
 		return(
 		<Router>
@@ -107,8 +164,8 @@ class App extends React.Component {constructor() {
 <li className='xiala xiala2' onClick={this.upla}><i className="iconfont icon-shang"></i></li>
 </ul>
       <hr/>
-      <Redirect  from ='/' exact to='/home'/>
-      <Route exact path="/home" exact component={Home}/>
+      <Route  path="/" exact component={Home}/>
+      <Route  path="/home" exact component={Home}/>
       <Route path="/channel/:xid" component={Anni}/>
       <Route path="/show/:sid" component={show}/>
 	  <Route path="/search/:ssid" component={Search}/>
